@@ -1,0 +1,51 @@
+// NAMA		:Awang Fraditya
+// NRP		:5027221055
+// Jurusan	:Teknologi Informasi
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int gravitasi = 10;
+int sin90 = 1;
+
+int speed_loss(int x){
+    if ( x >= 1 && x <= 10){
+        return x - 1;
+    }
+    else if (x >= 11 && x <= 20){
+        return x - 3;
+    }
+    else{
+       return x - 5;
+    }
+}
+int vlain (int x){
+    if ( x >= 1 && x <= 10){
+        return 1;
+    }
+    else if (x >= 11 && x <= 20){
+        return 3;
+    }
+    else{
+       return 5;
+    }
+}
+float v0(int x){
+    return sqrt(x * gravitasi);
+}
+    
+    
+int main()
+{
+  int jarak, n;
+  float vtangensial_roller;
+    
+  cin >> n;
+  
+  jarak = pow(speed_loss(n),2)*sin90/gravitasi;
+  vtangensial_roller = v0(jarak) + vlain(v0(jarak));
+      
+ cout << jarak << ' '<< vtangensial_roller << endl;
+    return 0;
+}
